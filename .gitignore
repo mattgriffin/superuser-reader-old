@@ -1,0 +1,4 @@
+#Ignore added platforms, plugins, and hooks
+platforms/
+plugins/
+hooks/
