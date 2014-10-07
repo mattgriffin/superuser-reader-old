@@ -34,8 +34,21 @@ rssreaderapp.app = {
     },
 
     homeBeforeCreate: function(event, args) {
-        $("#blog-list").html(this.blogListTemplate(this.blogData));
-        $("#blog-list").enhanceWithin();
+        this.get_blog_data();
+    },
+
+    get_blog_data: function() {
+        var app = this;
+        $.get("http://rss.cnn.com/rss/cnn_topstories.rss", function(data) {
+            app.blogData = $(data).find("item").map(function(i, item) {
+                return { 
+                    title: $(item).find("title").text(),
+                    body: $(item).find("description").text()
+                };
+            }).toArray();
+            $("#home-content").html(app.blogListTemplate(app.blogData));
+            $("#home-content").enhanceWithin();
+        });
     },
 
     postBeforeShow: function(event, args) {
