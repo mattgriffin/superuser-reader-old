@@ -44,7 +44,8 @@ rssreaderapp.app = {
                 return { 
                     url: $(item).find("link").text(),
                     title: $(item).find("title").text(),
-                    body: $(item).find("description").text()
+                    body: $(item).find("description").text(),
+                    publishDate: $(item).find("pubDate").text()
                 };
             }).toArray();
             $("#home-content").html(app.blogListTemplate(app.blogData));

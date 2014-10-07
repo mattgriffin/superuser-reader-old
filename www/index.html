@@ -48,7 +48,8 @@
 
         <script id="blog-list-template" type="text/x-handlebars-template">
             <ul id="blog-list" data-role="listview">
-                {{#.}}<li><a style="white-space:normal" href="#post?{{@index}}" data-transition="slide">{{title}}</a></li>{{/.}}
+                {{#.}}<li><a style="white-space:normal" href="#post?{{@index}}" data-transition="slide">{{title}}<br>
+                <div id="blog-list-date">{{publishDate}}</div></a></li>{{/.}}
             </ul>
         </script>
 
