@@ -42,6 +42,7 @@ rssreaderapp.app = {
         $.get("http://rss.cnn.com/rss/cnn_topstories.rss", function(data) {
             app.blogData = $(data).find("item").map(function(i, item) {
                 return { 
+                    url: $(item).find("link").text(),
                     title: $(item).find("title").text(),
                     body: $(item).find("description").text()
                 };
