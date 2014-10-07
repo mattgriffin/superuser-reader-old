@@ -16,34 +16,43 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var app = {
-    // Application Constructor
+
+var rssreaderapp = {};
+
+rssreaderapp.app = {
+
+    blogData: [ {title: "A first post", body: "This is the first post."},
+                {title: "The second post", body: "The second post is better."} ],
+
+    postTemplate: {},
+    blogListTemplate: {},
+
     initialize: function() {
-        this.bindEvents();
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        this.postTemplate = Handlebars.compile($("#post-template").html());
+        this.blogListTemplate = Handlebars.compile($("#blog-list-template").html());
     },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
+
+    homeBeforeCreate: function(event, args) {
+        $("#blog-list").html(this.blogListTemplate(this.blogData));
+        $("#blog-list").enhanceWithin();
+    },
+
+    postBeforeShow: function(event, args) {
+        var post = this.blogData[args[1]];
+        $("#post-content").html(this.postTemplate(post));
+        $("#post-content").enhanceWithin();
+    },
+    
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+        FastClick.attach(document.body);
     }
 };
+
+rssreaderapp.router = new $.mobile.Router(
+    {
+        "#post[?](\\d+)$": {handler: "postBeforeShow", events: "bs"},
+        "#home$": {handler: "homeBeforeCreate", events: "bc"}
+    },
+    rssreaderapp.app
+);
