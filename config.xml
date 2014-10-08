@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.mattgriffin.rss-reader-app" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.mattgriffin.superuser-reader" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Superuser</name>
     <description>
-        A sample Apache Cordova application that reads an RSS feed and displays the results.
+        A sample Apache Cordova application that reads the OpenStack Superuser feed and displays the results.
     </description>
     <author email="me@mattgriffin.com" href="https://twitter.com/@mattpgriffin">
         Matt Griffin

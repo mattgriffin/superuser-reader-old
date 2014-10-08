@@ -58,7 +58,7 @@ rssreaderapp.app = {
         $("#post-content").html(this.postTemplate(post));
         $("#post-content").enhanceWithin();
         $("#post-content a").click(function(e) {
-            window.open(this.href, '_blank', 'location=yes');
+            window.open(this.href, '_blank', 'location=yes', 'toolbar=yes', 'enableViewportScale=yes');
             return false;
         });
     },
