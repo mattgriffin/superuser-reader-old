@@ -39,13 +39,13 @@ rssreaderapp.app = {
 
     get_blog_data: function() {
         var app = this;
-        $.get("http://rss.cnn.com/rss/cnn_topstories.rss", function(data) {
-            app.blogData = $(data).find("item").map(function(i, item) {
+        $.get("http://superuser.openstack.org/articles/feed", function(data) {
+            app.blogData = $(data).find("entry").map(function(i, item) {
                 return { 
-                    url: $(item).find("link").text(),
+                    url: $(item).find("link").attr("href"),
                     title: $(item).find("title").text(),
-                    body: $(item).find("description").text(),
-                    publishDate: $(item).find("pubDate").text()
+                    body: $(item).find("summary").text(),
+                    publishDate: $(item).find("published").text()
                 };
             }).toArray();
             $("#home-content").html(app.blogListTemplate(app.blogData));
