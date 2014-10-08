@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.mattgriffin.rss-reader-app" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>RSS Reader App</name>
+    <name>Superuser</name>
     <description>
         A sample Apache Cordova application that reads an RSS feed and displays the results.
     </description>
@@ -12,6 +12,6 @@
 
     <preference name="StatusBarOverlaysWebView" value="false" />
     <!-- edit this to change the background color of your statusbar -->
-    <preference name="StatusBarBackgroundColor" value="#ca0002" />
+    <preference name="StatusBarBackgroundColor" value="#02233c" />
 
 </widget>
