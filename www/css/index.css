@@ -32,6 +32,12 @@ h1.logo {
     background-position: center; 
 }
 
-#blog-list-date {
+#blog-list ul a {
+	font-size: 90%;
+	font-weight: normal;
+}
+
+#blog-list-info p {
 	font-size: 75%;
+	font-weight: normal;
 }
