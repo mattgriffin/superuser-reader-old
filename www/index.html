@@ -48,8 +48,8 @@
 
         <script id="blog-list-template" type="text/x-handlebars-template">
             <ul id="blog-list" data-role="listview">
-                {{#.}}<li data-icon="false"><a style="white-space:normal" href="#post?{{@index}}" data-transition="slide">{{title}}<br>
-                <div id="blog-list-info"><p style="white-space:normal">{{publishDate}} By {{author}}</p></div></a></li>{{/.}}
+                {{#.}}<li data-icon="false"><a style="white-space:normal" href="#post?{{@index}}" data-transition="slide">{{title}}
+                <div id="blog-list-info"><p style="white-space:normal">{{formatDate publishDate "short"}} By {{author}}</p></div></a></li>{{/.}}
             </ul>
         </script>
 
@@ -64,7 +64,7 @@
 
         <script id="post-template" type="text/x-handlebars-template">
             <h2>{{title}}</h2>
-            <div id="blog-list-info"><p style="white-space:normal">{{publishDate}} By {{author}}</p></div>
+            <div id="blog-list-info"><p style="white-space:normal">{{formatDate publishDate "short"}} By {{author}}</p></div>
             <div>{{{body}}}</div>
             <div><a href="{{url}}" target="_blank">Read more</a></div>
         </script>
@@ -72,6 +72,26 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="lib/fastclick/js/fastclick.js"></script>
         <script type="text/javascript" src="lib/handlebars/js/handlebars-v2.0.0.js"></script>
+        <script type="text/javascript" src="lib/moment/js/moment-with-locales.min.js"></script>
+        <script>
+            var DateFormats = {
+               short: "MMMM D, YYYY",
+               long: "dddd DD.MM.YYYY HH:mm"
+            };
+            // Deprecated since version 0.8.0 
+            //Handlebars.registerHelper("formatDate", function(datetime, format) {
+
+            // Use UI.registerHelper..
+            Handlebars.registerHelper("formatDate", function(datetime, format) {
+              if (moment) {
+                f = DateFormats[format];
+                return moment(datetime).format(f);
+              }
+              else {
+                return datetime;
+              }
+            });
+        </script>
 
         <script type="text/javascript">
             rssreaderapp.app.initialize();
