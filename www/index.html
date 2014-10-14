@@ -37,8 +37,18 @@
 
     <body>
         <div data-role="page" id="home">
-            <div data-role="header" data-position="fixed">
-                <h1 class="logo">Superuser</h1>
+            <div data-role="panel" id="panel-menu" data-position="left" data-position-fixed="true" data-display="overlay" class="panel left">
+                <ul data-role="listview">
+                    <li>Menu</li>
+                    <li><a href="#home" data-rel="close">Superuser Blog</a></li>
+                    <li><a href="#summit" data-transition="slide">OpenStack Summit</a></li>
+                    <li><a href="#marketplace" data-transition="slide">OpenStack Marketplace</a></li>
+                    <li><a href="#about" data-transition="slide">About OpenStack</a></li>
+                </ul>
+            </div>
+
+            <div data-role="header" data-position="fixed" class="header">
+                <h1 class="logo">Superuser</h1><a href="#panel-menu" data-icon="bars" class="ui-btn-left">Menu</a>
             </div>
 
             <div role="main" data-role="ui-content" id="home-content">
@@ -53,8 +63,44 @@
             </ul>
         </script>
 
+        <div data-role="page" id="summit">
+            <div data-role="header" data-position="fixed" class="header">
+                <h1 class="logo"></h1><a href="#home" data-transition="slide" data-direction="reverse" data-icon="arrow-l" class="ui-btn-left">Home</a>
+            </div>
+
+            <div role="main" class="ui-content">
+                <h2>OpenStack Summit</h2>
+                <p>The OpenStack Summit is a five-day conference for developers, users, and administrators of OpenStack Cloud Software.</p>
+                <p><a href="#" onclick="window.open('https://openstack.org/summit/', '_system');">OpenStack Summit Paris</a></br>November 3-7, 2014</p>
+            </div>
+        </div>
+
+        <div data-role="page" id="marketplace">
+            <div data-role="header" data-position="fixed" class="header">
+                <h1 class="logo"></h1><a href="#home" data-transition="slide" data-direction="reverse" data-icon="arrow-l" class="ui-btn-left">Home</a>
+            </div>
+
+            <div role="main" class="ui-content">
+                <h2>OpenStack Marketplace</h2>
+                <p>The OpenStack Marketplace will help you make an informed decision, whether you're building a cloud, looking to use one by the hour, or pursuing a hybrid model.</p>
+                <p>Visit the <a href="#" onclick="window.open('https://www.openstack.org/marketplace/', '_system');">OpenStack Marketplace</a>.</p>
+            </div>
+        </div>
+
+        <div data-role="page" id="about">
+            <div data-role="header" data-position="fixed" class="header">
+                <h1 class="logo"></h1><a href="#home" data-transition="slide" data-direction="reverse" data-icon="arrow-l" class="ui-btn-left">Home</a>
+            </div>
+
+            <div role="main" class="ui-content">
+                <h2>About OpenStack</h2>
+                <h3>Open source software for creating private and public clouds.</h3>
+                <p>The most innovative companies in the world move faster with OpenStack. <a href="#" onclick="window.open('https://www.openstack.org/', '_system');">Learn more</a> about OpenStack.</p>
+            </div>
+        </div>
+
         <div data-role="page" id="post">
-            <div data-role="header" data-position="fixed">
+            <div data-role="header" data-position="fixed" class="header">
                 <h1>Post</h1><a href="#home" data-transition="slide" data-direction="reverse" data-icon="arrow-l" class="ui-btn-left">Home</a>
             </div>
 
