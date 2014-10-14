@@ -45,7 +45,8 @@ rssreaderapp.app = {
                     url: $(item).find("link").attr("href"),
                     title: $(item).find("title").text(),
                     body: $(item).find("summary").text(),
-                    publishDate: $(item).find("published").text()
+                    publishDate: $(item).find("published").text(),
+                    author: $(item).find("name").text()
                 };
             }).toArray();
             $("#home-content").html(app.blogListTemplate(app.blogData));
@@ -58,7 +59,7 @@ rssreaderapp.app = {
         $("#post-content").html(this.postTemplate(post));
         $("#post-content").enhanceWithin();
         $("#post-content a").click(function(e) {
-            window.open(this.href, '_blank', 'location=yes', 'toolbar=yes', 'enableViewportScale=yes');
+            window.open(this.href, '_blank', 'location=yes,toolbar=yes,enableViewportScale=yes,closebuttoncaption=Close,transitionstyle=fliphorizontal');
             return false;
         });
     },
