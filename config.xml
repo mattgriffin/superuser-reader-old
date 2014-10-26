@@ -10,11 +10,12 @@
     <content src="index.html" />
     <access origin="*" />
 
-    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name = "StatusBarOverlaysWebView" value="false" />
     <!-- edit this to change the background color of your statusbar -->
     <preference name="StatusBarBackgroundColor" value="#02233c" />
 
     <preference name = "EnableViewportScale" value="true" />
+    <preference name = "DisallowOverscroll" value="true" />
 
     <platform name="ios">     
               <!-- iOS 7.0+ -->
