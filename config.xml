@@ -43,4 +43,11 @@
               <icon src="res/icon/ios/Icon-50@2x.png" width="100" height="100" />
      </platform>
 
+     <platform name="android">
+              <icon src="res/icon/android/drawable-ldpi/ic_launcher.png" density="ldpi" />
+              <icon src="res/icon/android/drawable-mdpi/ic_launcher.png" density="mdpi" />
+              <icon src="res/icon/android/drawable-hdpi/ic_launcher.png" density="hdpi" />
+              <icon src="res/icon/android/drawable-xhdpi/ic_launcher.png" density="xhdpi" />
+     </platform>
+
 </widget>
