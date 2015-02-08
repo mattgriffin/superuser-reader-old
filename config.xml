@@ -17,7 +17,10 @@
     <preference name = "EnableViewportScale" value="true" />
     <preference name = "DisallowOverscroll" value="true" />
 
-    <platform name="ios">     
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="10000" />
+
+    <platform name="ios">    
               <!-- iOS 7.0+ -->
               <!-- iPhone / iPod Touch  -->
               <icon src="res/icon/ios/Icon-60.png" width="60" height="60" />
@@ -41,6 +44,19 @@
               <!-- iPad Spotlight and Settings Icon -->
               <icon src="res/icon/ios/Icon-50.png" width="50" height="50" />
               <icon src="res/icon/ios/Icon-50@2x.png" width="100" height="100" />
+     </platform>
+
+     <platform name="android">
+              <!-- Android icons -->
+              <icon src="res/icon/android/drawable-ldpi/ic_launcher.png" density="ldpi" />
+              <icon src="res/icon/android/drawable-mdpi/ic_launcher.png" density="mdpi" />
+              <icon src="res/icon/android/drawable-hdpi/ic_launcher.png" density="hdpi" />
+              <icon src="res/icon/android/drawable-xhdpi/ic_launcher.png" density="xhdpi" />
+              <!-- Android splash screens -->
+              <splash src="res/screen/android/drawable-ldpi/splash.png" density="ldpi" />
+              <splash src="res/screen/android/drawable-mdpi/splash.png" density="mdpi" />
+              <splash src="res/screen/android/drawable-hdpi/splash.png" density="hdpi" />
+              <splash src="res/screen/android/drawable-xhdpi/splash.png" density="xhdpi" />
      </platform>
 
 </widget>
