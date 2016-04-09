@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.mattgriffin.superuser-reader" version="0.2.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.mattgriffin.superuser-reader" version="0.2.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Superuser</name>
     <description>
         A sample Apache Cordova application that reads the OpenStack Superuser feed and displays the results.
@@ -20,7 +20,7 @@
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="10000" />
 
-    <platform name="ios">    
+    <platform name="ios">
               <!-- iOS 7.0+ -->
               <!-- iPhone / iPod Touch  -->
               <icon src="res/icon/ios/Icon-60.png" width="60" height="60" />
